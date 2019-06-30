@@ -1,7 +1,11 @@
 import pandas as pd
-dictionary={"Name":["Harshit","Swati","Aditi"],"Age":[20,30,20]}
-dictionary1={"Name":["Shaily","Anshika","Palak"],"Age":[20,30,20]}
-df=pd.DataFrame(dictionary,index=[1,2,3])
-df1=pd.DataFrame(dictionary1,index=[1,2,3])
-merged=pd.merge(df,df1)
+
+df1 = pd.DataFrame({"HPI": [80, 90, 70, 60], "Int_Rate": [2, 1, 2, 3], "IND_GDP": [50, 45, 45, 67]},
+                   index=[2001, 2002, 2003, 2004])
+
+df2 = pd.DataFrame({"HPI": [80, 90, 70, 60], "Int_Rate": [2, 1, 2, 3], "IND_GDP": [50, 45, 45, 67]},
+                   index=[2005, 2006, 2007, 2008])
+
+merged = pd.merge(df1, df2, on="HPI")
+
 print(merged)
